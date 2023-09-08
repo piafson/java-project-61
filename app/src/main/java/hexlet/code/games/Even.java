@@ -16,24 +16,20 @@ public class Even {
             Scanner sc = new Scanner(System.in);
             String answer = sc.nextLine();
 
-            if (!answer.equalsIgnoreCase("yes")
-                    && !answer.equalsIgnoreCase("no")) {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(.");
-            }
             if (question % 2 != 0 && answer.equalsIgnoreCase("yes")) {
-                System.out.println("'yes' is wrong answer ;(. "
-                        + "Correct answer was 'no'.");
-                System.out.println("Let's try again, " + userName + "!");
+                Engine.wrongAnswer("yes", "no", userName);
             }
             if (question % 2 == 0 && answer.equalsIgnoreCase("no")) {
-                System.out.println("'no' is wrong answer ;(. "
-                        + "Correct answer was 'yes'.");
-                System.out.println("Let's try again, " + userName + "!");
+                Engine.wrongAnswer("no", "yes", userName);
             }
             if (question % 2 == 0 && answer.equalsIgnoreCase("yes")
                     || question % 2 != 0 && answer.equalsIgnoreCase("no")) {
                 System.out.println("Correct!");
                 trueCount++;
+            }
+            if (!answer.equalsIgnoreCase("yes")
+                    && !answer.equalsIgnoreCase("no")) {
+                Engine.wrongAnswer(answer, "yes/no", userName);
             }
             count++;
         }

@@ -22,4 +22,10 @@ public class Engine {
         System.out.println("Question: " + question);
         System.out.print("Your answer: ");
     }
+    public static void wrongAnswer(String answer, String result,
+                                   String userName) {
+        System.out.println("'" + answer + "'" + " is wrong answer ;(. "
+                + "Correct answer was " + "'" + result + "'" + ".");
+        System.out.println("Let's try again, " + userName + "!");
+    }
 }

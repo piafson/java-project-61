@@ -31,9 +31,8 @@ public class Calc {
                     System.out.println("Correct!");
                     trueCount++;
                 } else {
-                    System.out.println("'" + answer + "'"
-                            + " is wrong answer ;(. "
-                            + "Correct answer was " +  "'" + result + "'");
+                    Engine.wrongAnswer(Integer.toString(answer),
+                            Integer.toString(result), userName);
                 }
             }
             if (randChar == '-') {
@@ -49,9 +48,8 @@ public class Calc {
                     System.out.println("Correct!");
                     trueCount++;
                 } else {
-                    System.out.println("'" + answer + "'"
-                            + " is wrong answer ;(. "
-                            + "Correct answer was " +  "'" + result + "'");
+                    Engine.wrongAnswer(Integer.toString(answer),
+                            Integer.toString(result), userName);
                 }
             }
             if (randChar == '*') {
@@ -67,9 +65,8 @@ public class Calc {
                     System.out.println("Correct!");
                     trueCount++;
                 } else {
-                    System.out.println("'" + answer + "'"
-                            + " is wrong answer ;(. "
-                            + "Correct answer was " +  "'" + result + "'");
+                    Engine.wrongAnswer(Integer.toString(answer),
+                            Integer.toString(result), userName);
                 }
             }
             count++;
