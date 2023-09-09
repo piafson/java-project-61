@@ -4,12 +4,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Gcd {
-    public static void calcGcd() {
+    public static void startGcd(int repeat) {
         String userName = Engine.greeting();
         System.out.println("Find the greatest common divisor of given numbers.");
         int count = 0;
         int trueCount = 0;
-        while (count < 3) {
+        while (count < repeat) {
             Random random = new Random();
             int result = 0;
             int randInt1 =  random.nextInt(1, 100);
@@ -28,7 +28,7 @@ public class Gcd {
             }
             count++;
         }
-        if (trueCount == 3) {
+        if (trueCount == repeat) {
             Engine.congratulation(userName);
         }
     }

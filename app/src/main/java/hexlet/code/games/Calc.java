@@ -4,12 +4,12 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Calc {
-    public static void calculate() {
+    public static void startCalc(int repeat) {
         String userName = Engine.greeting();
         System.out.println("What is the result of expression?");
         int count = 0;
         int trueCount = 0;
-        while (count < 3) {
+        while (count < repeat) {
             Random rand = new Random();
             int result = 0;
             int randInt1 = 0;
@@ -71,7 +71,7 @@ public class Calc {
             }
             count++;
         }
-        if (trueCount == 3) {
+        if (trueCount == repeat) {
             Engine.congratulation(userName);
         }
     }

@@ -9,3 +9,5 @@
 
 [asciicast_gcd](https://asciinema.org/a/9gU3B2CkfcQDsOQJjerSb6F39)
 
+[asciicast_progression](https://asciinema.org/a/qkul1SyTCGW4WKK7EjKvGXCxb)
+
