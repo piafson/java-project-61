@@ -6,7 +6,7 @@ import java.util.Random;
 public class Calc {
     public static void startCalc(int repeat) {
         String userName = Engine.greeting();
-        System.out.println("What is the result of expression?");
+        System.out.println("What is the result of the expression?");
         int count = 0;
         int trueCount = 0;
         while (count < repeat) {
