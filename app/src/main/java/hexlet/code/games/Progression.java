@@ -7,6 +7,7 @@ public class Progression {
         final int maxRandBegin = 20;
         final int maxRandStep = 5;
         final int maxRandSkip = 10;
+        final int maxLength = 10;
         String userName = Engine.greeting();
         System.out.println("What number is missing in the progression?");
         int count = 0;
@@ -18,7 +19,7 @@ public class Progression {
             int skip = random.nextInt(1, maxRandSkip);
             int right = 0;
             String question = "";
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < maxLength; i++) {
                 if (i == skip) {
                     question = question + ".. ";
                     begin = begin + step;
