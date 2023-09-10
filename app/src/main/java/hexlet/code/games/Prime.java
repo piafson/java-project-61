@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Prime {
     public static void startPrime(int repeat) {
+        final int minRand = 2;
+        final int maxRand = 61;
         String userName = Engine.greeting();
         System.out.println("Answer 'yes' if given number is prime. "
                 + "Otherwise answer 'no'.");
@@ -12,7 +14,7 @@ public class Prime {
         int trueCount = 0;
         while (count < repeat) {
             Random rand = new Random();
-            int question = rand.nextInt(2, 61);
+            int question = rand.nextInt(minRand, maxRand);
             String right = "yes";
             int tmp = 0;
             for (int i = 2; i <= question / 2; i++) {

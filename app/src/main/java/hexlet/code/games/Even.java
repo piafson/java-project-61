@@ -3,7 +3,10 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 public class Even {
+
     public static void startEven(int repeat) {
+        final int minRand = 4;
+        final int maxRand = 1000;
         String userName = Engine.greeting();
         int count = 0;
         int trueCount = 0;
@@ -11,7 +14,7 @@ public class Even {
                 + "answer 'no'.");
         while (count < repeat) {
             Random rand = new Random();
-            int question = rand.nextInt(4, 1000);
+            int question = rand.nextInt(minRand, maxRand);
             Engine.dialoge(Integer.toString(question));
             Scanner sc = new Scanner(System.in);
             String answer = sc.nextLine();

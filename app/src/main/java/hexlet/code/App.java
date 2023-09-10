@@ -6,6 +6,7 @@ import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 import java.util.Scanner;
 public class App {
+
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -17,17 +18,17 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         Scanner in = new Scanner(System.in);
-        final int choice = in.nextInt();
+        String choice = in.nextLine();
         final int repeat = 3;
 
         switch (choice) {
-            case (0) -> Engine.bye();
-            case (1) -> Engine.greeting();
-            case (2) -> Even.startEven(repeat);
-            case (3) -> Calc.startCalc(repeat);
-            case (4) -> Gcd.startGcd(repeat);
-            case (5) -> Progression.startProgression(repeat);
-            case (6) -> Prime.startPrime(repeat);
+            case ("0") -> Engine.bye();
+            case ("1") -> Engine.greeting();
+            case ("2") -> Even.startEven(repeat);
+            case ("3") -> Calc.startCalc(repeat);
+            case ("4") -> Gcd.startGcd(repeat);
+            case ("5") -> Progression.startProgression(repeat);
+            case ("6") -> Prime.startPrime(repeat);
             default -> {
                 break;
             }
