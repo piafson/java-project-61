@@ -19,8 +19,8 @@ public class Engine {
         System.out.println("Congratulations, " + userName + "!");
     }
     public static void dialoge(String question) {
-        System.out.print("Question: " + question);
-        System.out.print('\n' + "Your answer: ");
+        System.out.println("Question: " + question);
+        System.out.print("Your answer: ");
     }
     public static void wrongAnswer(String answer, String result,
                                    String userName) {
