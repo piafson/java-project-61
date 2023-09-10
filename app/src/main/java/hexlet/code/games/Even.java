@@ -11,7 +11,7 @@ public class Even {
                 + "answer 'no'.");
         while (count < repeat) {
             Random rand = new Random();
-            int question = rand.nextInt(1000);
+            int question = rand.nextInt(4, 1000);
             Engine.dialoge(Integer.toString(question));
             Scanner sc = new Scanner(System.in);
             String answer = sc.nextLine();
