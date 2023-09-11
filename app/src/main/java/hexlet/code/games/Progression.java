@@ -29,7 +29,7 @@ public class Progression {
                 begin = begin + step;
                 question = question + begin + " ";
             }
-            Engine.dialoge(question);
+            Engine.dialogue(question);
             Scanner sc = new Scanner(System.in);
             int answer = sc.nextInt();
             if (answer == right) {

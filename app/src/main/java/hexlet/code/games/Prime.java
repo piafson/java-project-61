@@ -24,7 +24,7 @@ public class Prime {
                     break;
                 }
             }
-            Engine.dialoge(Integer.toString(question));
+            Engine.dialogue(Integer.toString(question));
             Scanner sc = new Scanner(System.in);
             String answer = sc.nextLine();
             if (answer.equalsIgnoreCase(right)) {

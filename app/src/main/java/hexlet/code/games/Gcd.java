@@ -18,7 +18,7 @@ public class Gcd {
             int randInt2 = random.nextInt(minRand, maxRand);
             result = gcd(randInt1, randInt2);
             String question = randInt1 + " " + randInt2;
-            Engine.dialoge(question);
+            Engine.dialogue(question);
             Scanner sc = new Scanner(System.in);
             int answer = sc.nextInt();
             if (result == answer) {

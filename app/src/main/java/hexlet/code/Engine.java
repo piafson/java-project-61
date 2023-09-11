@@ -18,7 +18,7 @@ public class Engine {
     public static void congratulation(String userName) {
         System.out.println("Congratulations, " + userName + "!");
     }
-    public static void dialoge(String question) {
+    public static void dialogue(String question) {
         System.out.println("Question: " + question);
         System.out.print("Your answer: ");
     }

@@ -15,7 +15,7 @@ public class Even {
         while (count < repeat) {
             Random rand = new Random();
             int question = rand.nextInt(minRand, maxRand);
-            Engine.dialoge(Integer.toString(question));
+            Engine.dialogue(Integer.toString(question));
             Scanner sc = new Scanner(System.in);
             String answer = sc.nextLine();
             String right = question % 2 == 0 ? "yes" : "no";
