@@ -1,6 +1,5 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
-import java.util.Scanner;
 import java.util.Random;
 
 public class Calc {
@@ -11,7 +10,6 @@ public class Calc {
         String userName = Engine.greeting();
         System.out.println("What is the result of the expression?");
         int count = 0;
-        int trueCount = 0;
         while (count < repeat) {
             Random rand = new Random();
             int randInt1 = rand.nextInt(maxRandSum);
@@ -20,54 +18,24 @@ public class Calc {
             char[] chars = {'-', '+', '*'};
             char randChar = chars[rand.nextInt(maxRandChars[1])];
             if (randChar == '+') {
-                int result = randInt1 + randInt2;
                 String question = randInt1 + " " + randChar + " " + randInt2;
-                Engine.dialogue(question);
-                Scanner sc = new Scanner(System.in);
-                int answer = sc.nextInt();
-                result = randInt1 + randInt2;
-                if (result == answer) {
-                    System.out.println("Correct!");
-                    trueCount++;
-                } else {
-                    Engine.wrongAnswer(Integer.toString(answer),
-                            Integer.toString(result), userName);
-                }
+                int result = randInt1 + randInt2;
+                Engine.dialogue(question, Integer.toString(result), userName);
             }
             if (randChar == '-') {
-                int result = randInt1 - randInt2;
                 String question = randInt1 + " " + randChar + " " + randInt2;
-                Engine.dialogue(question);
-                Scanner sc = new Scanner(System.in);
-                int answer = sc.nextInt();
-                if (result == answer) {
-                    System.out.println("Correct!");
-                    trueCount++;
-                } else {
-                    Engine.wrongAnswer(Integer.toString(answer),
-                            Integer.toString(result), userName);
-                }
+                int result = randInt1 - randInt2;
+                Engine.dialogue(question, Integer.toString(result), userName);
             }
             if (randChar == '*') {
                 randInt1 = rand.nextInt(2, maxRandMult[1]);
                 randInt2 = rand.nextInt(2, maxRandMult[0]);
-                int result = randInt1 * randInt2;
                 String question = randInt1 + " " + randChar + " " + randInt2;
-                Engine.dialogue(question);
-                Scanner sc = new Scanner(System.in);
-                int answer = sc.nextInt();
-                if (result == answer) {
-                    System.out.println("Correct!");
-                    trueCount++;
-                } else {
-                    Engine.wrongAnswer(Integer.toString(answer),
-                            Integer.toString(result), userName);
-                }
+                int result = randInt1 * randInt2;
+                Engine.dialogue(question, Integer.toString(result), userName);
             }
             count++;
         }
-        if (trueCount == repeat) {
-            Engine.congratulation(userName);
-        }
+        Engine.congratulation(userName);
     }
 }
