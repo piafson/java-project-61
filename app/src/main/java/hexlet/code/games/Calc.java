@@ -17,20 +17,19 @@ public class Calc {
             int randIntChar = rand.nextInt(maxRandChars[0]);
             char[] chars = {'-', '+', '*'};
             char randChar = chars[rand.nextInt(maxRandChars[1])];
+            String question = randInt1 + " " + randChar + " " + randInt2;
             if (randChar == '+') {
-                String question = randInt1 + " " + randChar + " " + randInt2;
                 int result = randInt1 + randInt2;
                 Engine.dialogue(question, Integer.toString(result), userName);
             }
             if (randChar == '-') {
-                String question = randInt1 + " " + randChar + " " + randInt2;
                 int result = randInt1 - randInt2;
                 Engine.dialogue(question, Integer.toString(result), userName);
             }
             if (randChar == '*') {
                 randInt1 = rand.nextInt(2, maxRandMult[1]);
                 randInt2 = rand.nextInt(2, maxRandMult[0]);
-                String question = randInt1 + " " + randChar + " " + randInt2;
+                question = randInt1 + " " + randChar + " " + randInt2;
                 int result = randInt1 * randInt2;
                 Engine.dialogue(question, Integer.toString(result), userName);
             }
