@@ -18,12 +18,9 @@ public class Calc {
             char[] chars = {'-', '+', '*'};
             char randChar = chars[rand.nextInt(maxRandChars[1])];
             String question = randInt1 + " " + randChar + " " + randInt2;
-            if (randChar == '+') {
-                int result = randInt1 + randInt2;
-                Engine.dialogue(question, Integer.toString(result), userName);
-            }
-            if (randChar == '-') {
-                int result = randInt1 - randInt2;
+            if (randChar == '+' || randChar == '-') {
+                int result = randChar == '+' ? randInt1 + randInt2
+                        : randInt1 - randInt2;
                 Engine.dialogue(question, Integer.toString(result), userName);
             }
             if (randChar == '*') {

@@ -9,7 +9,6 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. "
                 + "Otherwise answer 'no'.");
         int count = 0;
-        int trueCount = 0;
         while (count < repeat) {
             Random rand = new Random();
             int question = rand.nextInt(minRand, maxRand);
