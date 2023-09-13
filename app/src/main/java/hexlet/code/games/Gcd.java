@@ -7,8 +7,7 @@ public class Gcd {
         final int maxRand = 100;
         String userName = Engine.greeting();
         System.out.println("Find the greatest common divisor of given numbers.");
-        int count = 0;
-        while (count < repeat) {
+        for (int count = 0; count < repeat; count++) {
             Random random = new Random();
             int result = 0;
             int randInt1 =  random.nextInt(minRand, maxRand);
@@ -16,7 +15,6 @@ public class Gcd {
             result = gcd(randInt1, randInt2);
             String question = randInt1 + " " + randInt2;
             Engine.dialogue(question, Integer.toString(result), userName);
-            count++;
         }
         Engine.congratulation(userName);
     }

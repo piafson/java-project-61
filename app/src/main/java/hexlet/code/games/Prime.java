@@ -8,8 +8,7 @@ public class Prime {
         String userName = Engine.greeting();
         System.out.println("Answer 'yes' if given number is prime. "
                 + "Otherwise answer 'no'.");
-        int count = 0;
-        while (count < repeat) {
+        for (int count = 0; count < repeat; count++) {
             Random rand = new Random();
             int question = rand.nextInt(minRand, maxRand);
             String result = "yes";
@@ -22,7 +21,6 @@ public class Prime {
                 }
             }
             Engine.dialogue(Integer.toString(question), result, userName);
-            count++;
         }
         Engine.congratulation(userName);
     }

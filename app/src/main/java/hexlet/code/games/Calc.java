@@ -9,8 +9,7 @@ public class Calc {
         final int[] maxRandMult = {10, 20};
         String userName = Engine.greeting();
         System.out.println("What is the result of the expression?");
-        int count = 0;
-        while (count < repeat) {
+        for (int count = 0; count < repeat; count++) {
             Random rand = new Random();
             int randInt1 = rand.nextInt(maxRandSum);
             int randInt2 = rand.nextInt(maxRandSum);
@@ -30,7 +29,6 @@ public class Calc {
                 int result = randInt1 * randInt2;
                 Engine.dialogue(question, Integer.toString(result), userName);
             }
-            count++;
         }
         Engine.congratulation(userName);
     }

@@ -8,8 +8,7 @@ public class Progression {
         final int maxLength = 10;
         String userName = Engine.greeting();
         System.out.println("What number is missing in the progression?");
-        int count = 0;
-        while (count < repeat) {
+        for (int count = 0; count < repeat; count++) {
             Random random = new Random();
             int begin = random.nextInt(0, maxRandBegin);
             int step = random.nextInt(2, maxRandStep);
@@ -27,7 +26,6 @@ public class Progression {
                 question = question + begin + " ";
             }
             Engine.dialogue(question, Integer.toString(result), userName);
-            count++;
         }
         Engine.congratulation(userName);
     }

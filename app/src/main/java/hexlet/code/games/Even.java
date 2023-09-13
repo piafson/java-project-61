@@ -7,15 +7,13 @@ public class Even {
         final int minRand = 4;
         final int maxRand = 1000;
         String userName = Engine.greeting();
-        int count = 0;
         System.out.println("Answer 'yes' if the number is even, otherwise "
                 + "answer 'no'.");
-        while (count < repeat) {
+        for (int count = 0; count < repeat; count++) {
             Random rand = new Random();
             int question = rand.nextInt(minRand, maxRand);
             String result = question % 2 == 0 ? "yes" : "no";
             Engine.dialogue(Integer.toString(question), result, userName);
-            count++;
         }
         Engine.congratulation(userName);
     }
