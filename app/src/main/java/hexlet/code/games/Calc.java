@@ -4,17 +4,16 @@ import java.util.Random;
 
 public class Calc {
     public static void startCalc(int repeat) {
-        final int maxRandChars = 3;
-        final int maxRandSum = 50;
+        final int[] maxRand = {3, 50};
         final int[] maxRandMult = {10, 20};
         String userName = Engine.greeting();
         System.out.println("What is the result of the expression?");
         for (int count = 0; count < repeat; count++) {
             Random rand = new Random();
-            int randInt1 = rand.nextInt(maxRandSum);
-            int randInt2 = rand.nextInt(maxRandSum);
+            int randInt1 = rand.nextInt(maxRand[1]);
+            int randInt2 = rand.nextInt(maxRand[1]);
             char[] chars = {'-', '+', '*'};
-            char randChar = chars[rand.nextInt(maxRandChars)];
+            char randChar = chars[rand.nextInt(maxRand[0])];
             String question = randInt1 + " " + randChar + " " + randInt2;
             if (randChar == '+' || randChar == '-') {
                 int result = randChar == '+' ? randInt1 + randInt2
