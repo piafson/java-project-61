@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Calc {
     public static void startCalc(int repeat) {
-        final int[] maxRandChars = {100, 3};
+        final int maxRandChars = 3;
         final int maxRandSum = 50;
         final int[] maxRandMult = {10, 20};
         String userName = Engine.greeting();
@@ -13,9 +13,8 @@ public class Calc {
             Random rand = new Random();
             int randInt1 = rand.nextInt(maxRandSum);
             int randInt2 = rand.nextInt(maxRandSum);
-            int randIntChar = rand.nextInt(maxRandChars[0]);
             char[] chars = {'-', '+', '*'};
-            char randChar = chars[rand.nextInt(maxRandChars[1])];
+            char randChar = chars[rand.nextInt(maxRandChars)];
             String question = randInt1 + " " + randChar + " " + randInt2;
             if (randChar == '+' || randChar == '-') {
                 int result = randChar == '+' ? randInt1 + randInt2
