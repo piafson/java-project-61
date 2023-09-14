@@ -3,7 +3,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 public class Progression {
     private static final int[] RANGE_RAND = {5, 10, 20};
-    public static String gameQues = "What number is missing in the progression?";
+    public static final String GAME_QUES = "What number is missing in the "
+            + "progression?";
     public static void startProgression() {
         String[][] result = new String[Engine.COUNT_ROUNDS][2];
         for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
@@ -25,6 +26,6 @@ public class Progression {
                 result[i][0] = result[i][0] + begin + " ";
             }
         }
-        Engine.run(gameQues, result);
+        Engine.run(GAME_QUES, result);
     }
 }

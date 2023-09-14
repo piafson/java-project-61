@@ -3,8 +3,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 public class Prime {
     private static final int[] RANGE_RAND = {2, 61};
-    public static String gameQues = "Answer 'yes' if given number is prime. "
-            + "Otherwise answer 'no'.";
+    private static final String GAME_QUES = "Answer 'yes' if given number is "
+            + "prime. Otherwise answer 'no'.";
     public static void startPrime() {
         String[][] result = new String[Engine.COUNT_ROUNDS][2];
         for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
@@ -21,6 +21,6 @@ public class Prime {
                 }
             }
         }
-        Engine.run(gameQues, result);
+        Engine.run(GAME_QUES, result);
     }
 }

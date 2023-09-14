@@ -3,8 +3,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 public class Even {
     private static final int[] RANGE_RAND = {4, 1000};
-    public static String gameQues = "Answer 'yes' if the number is even, otherwise"
-            + " answer 'no'.";
+    private static final String GAME_QUES = "Answer 'yes' if the number is even"
+            + ", otherwise answer 'no'.";
     public static void startEven() {
         String[][] result = new String[Engine.COUNT_ROUNDS][2];
         for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
@@ -13,6 +13,6 @@ public class Even {
             result[i][0] = Integer.toString(resInt);
             result[i][1] = resInt % 2 == 0 ? "yes" : "no";
         }
-        Engine.run(gameQues, result);
+        Engine.run(GAME_QUES, result);
     }
 }

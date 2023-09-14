@@ -3,7 +3,8 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Calc {
-    public static String gameQues = "What is the result of the expression?";
+    public static final String GAME_QUES = "What is the result of the "
+            + "expression?";
     public static void startCalc() {
         final int[] maxRand = {3, 50};
         final int[] maxRandMult = {10, 20};
@@ -28,6 +29,6 @@ public class Calc {
                 result[i][1] = Integer.toString(resInt);
             }
         }
-        Engine.run(gameQues, result);
+        Engine.run(GAME_QUES, result);
     }
 }

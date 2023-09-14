@@ -3,7 +3,7 @@ import hexlet.code.Engine;
 import java.util.Random;
 public class Gcd {
     private static final int[] RANGE_RAND = {1, 100};
-    public static String gameQues = "Find the greatest common divisor "
+    private static final String GAME_QUES = "Find the greatest common divisor "
             +  "of given numbers.";
     public static void startGcd() {
         String[][] result = new String[Engine.COUNT_ROUNDS][2];
@@ -16,7 +16,7 @@ public class Gcd {
             result[i][1] = Integer.toString(resInt);
             result[i][0] = randInt1 + " " + randInt2;
         }
-        Engine.run(gameQues, result);
+        Engine.run(GAME_QUES, result);
     }
     public static int gcd(int a, int b) {
         return (a % b == 0) ? Math.abs(b) : gcd(b, a % b);
