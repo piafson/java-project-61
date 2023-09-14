@@ -2,18 +2,17 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import java.util.Random;
 public class Even {
-
-    public static void startEven(int repeat) {
-        final int[] rangeRand = {4, 1000};
-        String userName = Engine.greeting();
-        System.out.println("Answer 'yes' if the number is even, otherwise "
-                + "answer 'no'.");
-        for (int count = 0; count < repeat; count++) {
+    private static final int[] RANGE_RAND = {4, 1000};
+    public static String gameQues = "Answer 'yes' if the number is even, otherwise"
+            + " answer 'no'.";
+    public static void startEven() {
+        String[][] result = new String[Engine.COUNT_ROUNDS][2];
+        for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
             Random rand = new Random();
-            int question = rand.nextInt(rangeRand[0], rangeRand[1]);
-            String result = question % 2 == 0 ? "yes" : "no";
-            Engine.dialogue(Integer.toString(question), result, userName);
+            int resInt = rand.nextInt(RANGE_RAND[0], RANGE_RAND[1]);
+            result[i][0] = Integer.toString(resInt);
+            result[i][1] = resInt % 2 == 0 ? "yes" : "no";
         }
-        Engine.congratulation(userName);
+        Engine.run(gameQues, result);
     }
 }

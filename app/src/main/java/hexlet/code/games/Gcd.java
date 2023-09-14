@@ -2,20 +2,21 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import java.util.Random;
 public class Gcd {
-    public static void startGcd(int repeat) {
-        final int[] rangeRand = {1, 100};
-        String userName = Engine.greeting();
-        System.out.println("Find the greatest common divisor of given numbers.");
-        for (int count = 0; count < repeat; count++) {
+    private static final int[] RANGE_RAND = {1, 100};
+    public static String gameQues = "Find the greatest common divisor "
+            +  "of given numbers.";
+    public static void startGcd() {
+        String[][] result = new String[Engine.COUNT_ROUNDS][2];
+        for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
             Random random = new Random();
-            int result = 0;
-            int randInt1 =  random.nextInt(rangeRand[0], rangeRand[1]);
-            int randInt2 = random.nextInt(rangeRand[0], rangeRand[1]);
-            result = gcd(randInt1, randInt2);
-            String question = randInt1 + " " + randInt2;
-            Engine.dialogue(question, Integer.toString(result), userName);
+            int resInt = 0;
+            int randInt1 =  random.nextInt(RANGE_RAND[0], RANGE_RAND[1]);
+            int randInt2 = random.nextInt(RANGE_RAND[0], RANGE_RAND[1]);
+            resInt = gcd(randInt1, randInt2);
+            result[i][1] = Integer.toString(resInt);
+            result[i][0] = randInt1 + " " + randInt2;
         }
-        Engine.congratulation(userName);
+        Engine.run(gameQues, result);
     }
     public static int gcd(int a, int b) {
         return (a % b == 0) ? Math.abs(b) : gcd(b, a % b);

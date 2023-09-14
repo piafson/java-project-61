@@ -2,25 +2,25 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import java.util.Random;
 public class Prime {
-    public static void startPrime(int repeat) {
-        final int[] rangeRand = {2, 61};
-        String userName = Engine.greeting();
-        System.out.println("Answer 'yes' if given number is prime. "
-                + "Otherwise answer 'no'.");
-        for (int count = 0; count < repeat; count++) {
+    private static final int[] RANGE_RAND = {2, 61};
+    public static String gameQues = "Answer 'yes' if given number is prime. "
+            + "Otherwise answer 'no'.";
+    public static void startPrime() {
+        String[][] result = new String[Engine.COUNT_ROUNDS][2];
+        for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
             Random rand = new Random();
-            int question = rand.nextInt(rangeRand[0], rangeRand[1]);
-            String result = "yes";
+            int question = rand.nextInt(RANGE_RAND[0], RANGE_RAND[1]);
+            result[i][0] = Integer.toString(question);
+            result[i][1] = "yes";
             int tmp = 0;
-            for (int i = 2; i <= question / 2; i++) {
-                tmp = question % i;
+            for (int j = 2; j <= question / 2; j++) {
+                tmp = question % j;
                 if (tmp == 0) {
-                    result = "no";
+                    result[i][1] = "no";
                     break;
                 }
             }
-            Engine.dialogue(Integer.toString(question), result, userName);
         }
-        Engine.congratulation(userName);
+        Engine.run(gameQues, result);
     }
 }

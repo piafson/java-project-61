@@ -19,16 +19,15 @@ public class App {
         System.out.print("Your choice: ");
         Scanner in = new Scanner(System.in);
         String choice = in.nextLine();
-        final int repeat = 3;
 
         switch (choice) {
-            case ("0") -> Engine.bye();
-            case ("1") -> Engine.greeting();
-            case ("2") -> Even.startEven(repeat);
-            case ("3") -> Calc.startCalc(repeat);
-            case ("4") -> Gcd.startGcd(repeat);
-            case ("5") -> Progression.startProgression(repeat);
-            case ("6") -> Prime.startPrime(repeat);
+            case ("0") -> System.out.println("Bye!");
+            case ("1") -> Cli.greeting();
+            case ("2") -> Even.startEven();
+            case ("3") -> Calc.startCalc();
+            case ("4") -> Gcd.startGcd();
+            case ("5") -> Progression.startProgression();
+            case ("6") -> Prime.startPrime();
             default -> {
                 break;
             }
