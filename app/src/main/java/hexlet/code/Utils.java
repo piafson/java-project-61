@@ -1,5 +1,9 @@
 package hexlet.code;
 import java.util.Random;
 public class Utils {
-    public static Random rand = new Random();
+    private static final Random RAND = new Random();
+
+    public static Random getRand() {
+        return RAND;
+    }
 }

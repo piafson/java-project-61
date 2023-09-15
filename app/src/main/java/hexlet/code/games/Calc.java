@@ -1,6 +1,7 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
-import static hexlet.code.Utils.rand;
+import hexlet.code.Utils;
+
 
 public class Calc {
     public static final String GAME_QUES = "What is the result of the "
@@ -12,12 +13,12 @@ public class Calc {
         final int[] maxRandMult = {10, 20};
         String[][] gameInfo = new String[Engine.COUNT_ROUNDS][2];
         for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
-            int randInt1 = rand.nextInt(maxRand[1]);
-            int randInt2 = rand.nextInt(maxRand[1]);
-            char randChar = CHARS[rand.nextInt(maxRand[0])];
+            int randInt1 = Utils.getRand().nextInt(maxRand[1]);
+            int randInt2 = Utils.getRand().nextInt(maxRand[1]);
+            char randChar = CHARS[Utils.getRand().nextInt(maxRand[0])];
             if (randChar == '*') {
-                randInt1 = rand.nextInt(2, maxRandMult[1]);
-                randInt2 = rand.nextInt(2, maxRandMult[0]);
+                randInt1 = Utils.getRand().nextInt(2, maxRandMult[1]);
+                randInt2 = Utils.getRand().nextInt(2, maxRandMult[0]);
             }
             gameInfo[i][0] = randInt1 + " " + randChar + " " + randInt2;
             gameInfo[i][1] = Integer.toString(calculate(randChar, randInt1,

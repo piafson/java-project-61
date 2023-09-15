@@ -1,6 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
-import static hexlet.code.Utils.rand;
+import hexlet.code.Utils;
 
 public class Prime {
     private static final int[] RANGE_RAND = {2, 61};
@@ -10,7 +10,7 @@ public class Prime {
     public static void startPrime() {
         String[][] gameInfo = new String[Engine.COUNT_ROUNDS][2];
         for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
-            int question = rand.nextInt(RANGE_RAND[0], RANGE_RAND[1]);
+            int question = Utils.getRand().nextInt(RANGE_RAND[0], RANGE_RAND[1]);
             gameInfo[i][0] = Integer.toString(question);
             gameInfo[i][1] = isPrime(question) ? "yes" : "no";
         }
