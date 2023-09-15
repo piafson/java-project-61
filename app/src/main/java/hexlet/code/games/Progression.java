@@ -4,12 +4,13 @@ import hexlet.code.Utils;
 
 public class Progression {
     private static final int[] RANGE_RAND = {5, 10, 20};
+    private static final int ROUNDS = Engine.COUNT_ROUNDS;
     public static final String GAME_QUES = "What number is missing in the "
             + "progression?";
 
     public static void startProgression() {
-        String[][] gameInfo = new String[Engine.COUNT_ROUNDS][2];
-        for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
+        String[][] gameInfo = new String[ROUNDS][2];
+        for (int i = 0; i < ROUNDS; i++) {
             int skip = Utils.getRand().nextInt(1, RANGE_RAND[1]);
             gameInfo[i][0] = "";
             int[] progression = getProgression();
