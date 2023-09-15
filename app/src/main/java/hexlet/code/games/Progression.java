@@ -1,31 +1,36 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
-import java.util.Random;
+import static hexlet.code.Utils.rand;
+
 public class Progression {
     private static final int[] RANGE_RAND = {5, 10, 20};
     public static final String GAME_QUES = "What number is missing in the "
             + "progression?";
+
     public static void startProgression() {
-        String[][] result = new String[Engine.COUNT_ROUNDS][2];
+        String[][] gameInfo = new String[Engine.COUNT_ROUNDS][2];
         for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
-            Random random = new Random();
-            int begin = random.nextInt(0, RANGE_RAND[2]);
-            int step = random.nextInt(2, RANGE_RAND[0]);
-            int skip = random.nextInt(1, RANGE_RAND[1]);
-            int resInt = 0;
-            result[i][0] = "";
-            for (int j = 0; j < RANGE_RAND[1]; j++) {
+            int skip = rand.nextInt(1, RANGE_RAND[1]);
+            gameInfo[i][0] = "";
+            int[] progression = getProgression();
+            for (int j = 0; j < progression.length; j++) {
                 if (j == skip) {
-                    result[i][0] = result[i][0] + ".. ";
-                    begin = begin + step;
-                    resInt = begin;
-                    result[i][1] = Integer.toString(resInt);
+                    gameInfo[i][0] = gameInfo[i][0] + ".. ";
+                    gameInfo[i][1] = Integer.toString(progression[j]);
                     continue;
                 }
-                begin = begin + step;
-                result[i][0] = result[i][0] + begin + " ";
+                gameInfo[i][0] = gameInfo[i][0] + progression[j] + " ";
             }
         }
-        Engine.run(GAME_QUES, result);
+        Engine.run(GAME_QUES, gameInfo);
+    }
+    public static int[] getProgression() {
+        int[] progression = new int[RANGE_RAND[1]];
+        int begin = rand.nextInt(0, RANGE_RAND[2]);
+        int step = rand.nextInt(2, RANGE_RAND[0]);
+        for (int i = 0; i < progression.length; i++) {
+            progression[i] = begin + step * i;
+        }
+        return progression;
     }
 }

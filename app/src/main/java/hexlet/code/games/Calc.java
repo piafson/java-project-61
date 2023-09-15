@@ -1,34 +1,38 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
-import java.util.Random;
+import static hexlet.code.Utils.rand;
 
 public class Calc {
     public static final String GAME_QUES = "What is the result of the "
             + "expression?";
+    private static final char[] CHARS = {'-', '+', '*'};
+
     public static void startCalc() {
         final int[] maxRand = {3, 50};
         final int[] maxRandMult = {10, 20};
-        String[][] result = new String[Engine.COUNT_ROUNDS][2];
+        String[][] gameInfo = new String[Engine.COUNT_ROUNDS][2];
         for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
-            Random rand = new Random();
             int randInt1 = rand.nextInt(maxRand[1]);
             int randInt2 = rand.nextInt(maxRand[1]);
-            char[] chars = {'-', '+', '*'};
-            char randChar = chars[rand.nextInt(maxRand[0])];
-            result[i][0] = randInt1 + " " + randChar + " " + randInt2;
-            if (randChar == '+' || randChar == '-') {
-                int resInt = randChar == '+' ? (randInt1 + randInt2)
-                        : (randInt1 - randInt2);
-                result[i][1] = Integer.toString(resInt);
-            }
+            char randChar = CHARS[rand.nextInt(maxRand[0])];
             if (randChar == '*') {
                 randInt1 = rand.nextInt(2, maxRandMult[1]);
                 randInt2 = rand.nextInt(2, maxRandMult[0]);
-                result[i][0] = randInt1 + " " + randChar + " " + randInt2;
-                int resInt = randInt1 * randInt2;
-                result[i][1] = Integer.toString(resInt);
             }
+            gameInfo[i][0] = randInt1 + " " + randChar + " " + randInt2;
+            gameInfo[i][1] = Integer.toString(calculate(randChar, randInt1,
+                    randInt2));
         }
-        Engine.run(GAME_QUES, result);
+        Engine.run(GAME_QUES, gameInfo);
+    }
+    public static int calculate(char ch, int first, int second) {
+        int result = 0;
+        if (ch == '+' || ch == '-') {
+            result = ch == '+' ? (first + second) : (first - second);
+        }
+        if (ch == '*') {
+            result = first * second;
+        }
+        return result;
     }
 }
