@@ -2,6 +2,7 @@ package hexlet.code;
 import java.util.Scanner;
 public class Engine {
     public static final int COUNT_ROUNDS = 3;
+
     public static void run(String question, String[][] result) {
         System.out.println('\n' + "Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
