@@ -11,10 +11,8 @@ public class Gcd {
         String[][] gameInfo = new String[Engine.COUNT_ROUNDS][2];
         for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
             int resInt = 0;
-            int randInt1 =  Utils.getRand().nextInt(RANGE_RAND[0],
-                    RANGE_RAND[1]);
-            int randInt2 = Utils.getRand().nextInt(RANGE_RAND[0],
-                    RANGE_RAND[1]);
+            int randInt1 =  Utils.getRand(RANGE_RAND[0], RANGE_RAND[1]);
+            int randInt2 = Utils.getRand(RANGE_RAND[0], RANGE_RAND[1]);
             resInt = gcd(randInt1, randInt2);
             gameInfo[i][1] = Integer.toString(resInt);
             gameInfo[i][0] = randInt1 + " " + randInt2;

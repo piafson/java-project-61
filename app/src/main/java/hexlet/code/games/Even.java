@@ -9,12 +9,10 @@ public class Even {
 
     public static void startEven() {
         String[][] gameInfo = new String[Engine.COUNT_ROUNDS][2];
-        int count = 0;
-        while (count < Engine.COUNT_ROUNDS) {
-            int resInt = Utils.getRand().nextInt(RANGE_RAND[0], RANGE_RAND[1]);
+        for (int count = 0; count < Engine.COUNT_ROUNDS; count++) {
+            int resInt = Utils.getRand(RANGE_RAND[0], RANGE_RAND[1]);
             gameInfo[count][0] = Integer.toString(resInt);
             gameInfo[count][1] =  isEven(resInt) ? "yes" : "no";
-            count++;
         }
         Engine.run(GAME_QUES, gameInfo);
     }

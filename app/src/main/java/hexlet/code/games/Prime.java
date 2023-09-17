@@ -10,13 +10,16 @@ public class Prime {
     public static void startPrime() {
         String[][] gameInfo = new String[Engine.COUNT_ROUNDS][2];
         for (int i = 0; i < Engine.COUNT_ROUNDS; i++) {
-            int question = Utils.getRand().nextInt(RANGE_RAND[0], RANGE_RAND[1]);
+            int question = Utils.getRand(RANGE_RAND[0], RANGE_RAND[1]);
             gameInfo[i][0] = Integer.toString(question);
             gameInfo[i][1] = isPrime(question) ? "yes" : "no";
         }
         Engine.run(GAME_QUES, gameInfo);
     }
     public static boolean isPrime(int num) {
+        if (num < 2) {
+            return false;
+        }
         int tmp = 0;
         for (int i = 2; i <= num / 2; i++) {
             tmp = num % i;
